@@ -5,8 +5,14 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
     libonig-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libxml2-dev \
+    libonig-dev \
     curl \
-    && docker-php-ext-install zip mbstring opcache pdo pdo_mysql mysqli
+    libssl-dev \
+    && docker-php-ext-install zip mbstring pdo pdo_mysql bcmath zip intl opcache
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
